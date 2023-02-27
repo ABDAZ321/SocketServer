@@ -106,12 +106,9 @@ io.on('connection', client => {
     //running update velocity function from game.js file
     if(state[roomName]){
     const vel = getUpdatedVelocity(keyCode, state[roomName].players[client.number - 1].vel);
-    }
-
-    // Setting specific players velocity to the velocity return from update function
-    if (vel && state[roomName]) {
+    if (vel) {
       state[roomName].players[client.number - 1].vel = vel;
-    }
+    }}
   }
 });
 
